@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline, Box } from '@mui/material';
@@ -10,6 +10,7 @@ import { Sidebar } from './components/Layout/Sidebar';
 import AppRoutes  from './routes';
 import './i18n';
 import 'leaflet/dist/leaflet.css';
+import { requestForToken, onMessageListener } from "./firebase";
 
 const theme = createTheme({
   palette: {
@@ -75,6 +76,15 @@ const AppContent = () => {
 };
 
 const App = () => {
+  useEffect(() => {
+    requestForToken(); // Get FCM Token when app starts
+
+    onMessageListener().then((payload) => {
+      console.log("Message received:", payload);
+      alert(`${payload.notification.title}: ${payload.notification.body}`);
+    });
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
