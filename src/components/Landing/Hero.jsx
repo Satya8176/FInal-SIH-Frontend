@@ -20,7 +20,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a 
             onClick={() => navigate('/admin/login')}
-              className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 min-w-[200px]"
+              className="group cursor-pointer bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 min-w-[200px]"
             >
               <Users className="w-6 h-6" />
               <span>Admin Login</span>
@@ -28,7 +28,7 @@ const Hero = () => {
             </a>
             <a 
               onClick={() => navigate('/login')}
-              className="group bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 min-w-[200px]"
+              className="group cursor-pointer bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 min-w-[200px]"
             >
               <UserCheck className="w-6 h-6" />
               <span>Tourist Login</span>

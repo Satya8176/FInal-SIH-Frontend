@@ -87,7 +87,7 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/admin/*"
+        path="/admin"
         element={
           <AdminProtectedRoute>
             <AdminLayout />
