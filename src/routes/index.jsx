@@ -9,6 +9,7 @@ import { Dashboard } from '../pages/Dashboard';
 import { Profile } from '../pages/Profile';
 import { Alerts } from '../pages/Alerts';
 import { Settings } from '../pages/Settings';
+import Landing from "../pages/Landing"
 
 // // Admin Pages
 import AdminLogin from '../pages/Admin/Login';
@@ -36,6 +37,10 @@ const AppRoutes = () => {
 
   return (
     <Routes>
+      <Route 
+      path = "/"
+      element = {<Landing/>}
+      />
       {/* User Routes */}
       <Route
         path="/login"

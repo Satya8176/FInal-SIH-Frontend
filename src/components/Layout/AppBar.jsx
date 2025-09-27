@@ -18,13 +18,13 @@ import { useAuth } from '../../context/AuthContext';
 import { useLocation } from '../../context/LocationContext';
 import { useAuthOperations } from '../../hooks/useAuth';
 import { Shield } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const CustomAppBar = ({ onMenuClick }) => {
   const { t } = useTranslation();
   const { user } = useAuth();
   const { alerts } = useLocation();
   const { handleLogout } = useAuthOperations();
-  
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleProfileMenuOpen = (event) => {

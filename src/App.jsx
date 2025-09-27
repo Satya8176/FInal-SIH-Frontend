@@ -8,6 +8,7 @@ import { LocationProvider } from './context/LocationContext';
 import { CustomAppBar } from './components/Layout/AppBar';
 import { Sidebar } from './components/Layout/Sidebar';
 import AppRoutes  from './routes';
+import Landing from './pages/Landing';
 import './i18n';
 import 'leaflet/dist/leaflet.css';
 import { requestForToken, onMessageListener } from "./firebase";
