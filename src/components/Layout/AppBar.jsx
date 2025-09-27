@@ -43,8 +43,15 @@ export const CustomAppBar = ({ onMenuClick }) => {
   const unreadAlerts = alerts.filter(alert => !alert.resolved).length;
 
   return (
-    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+    <AppBar
+      position="fixed"
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+        backgroundColor: '#1976d2', // optional: MUI default primary
+      }}
+    >
       <Toolbar>
+        {/* Mobile Menu Toggle */}
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -54,19 +61,23 @@ export const CustomAppBar = ({ onMenuClick }) => {
         >
           <MenuIcon />
         </IconButton>
-        
+
+        {/* App Logo / Icon */}
         <Shield size={32} style={{ marginRight: 12 }} />
-        
+
+        {/* Title */}
         <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
           Tourist Safety App
         </Typography>
 
+        {/* Notifications */}
         <IconButton color="inherit">
           <Badge badgeContent={unreadAlerts} color="error">
             <NotificationsIcon />
           </Badge>
         </IconButton>
 
+        {/* Profile Menu */}
         <IconButton
           size="large"
           edge="end"
@@ -80,6 +91,7 @@ export const CustomAppBar = ({ onMenuClick }) => {
         </IconButton>
       </Toolbar>
 
+      {/* Profile Dropdown */}
       <Menu
         anchorEl={anchorEl}
         anchorOrigin={{

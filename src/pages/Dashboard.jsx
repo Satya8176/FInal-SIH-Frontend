@@ -15,7 +15,7 @@ import { LocationOn, Security, TrackChanges } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import { useLocation } from '../context/LocationContext';
-import { TouristMap } from '../components/Map/TouristMap';
+import TouristMap from '../components/Map/TouristMap';
 import { PanicButton } from '../components/Safety/PanicButton';
 
 export const Dashboard = () => {
@@ -32,7 +32,7 @@ export const Dashboard = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: 3 }}>
+    <Container maxWidth="lg" sx={{ py: 3, mx: '20vw', width: '100%'}}>
       <Typography variant="h4" component="h1" gutterBottom>
         {t('dashboard.title')}
       </Typography>
@@ -49,7 +49,10 @@ export const Dashboard = () => {
                 </Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                <Typography variant="h3" color={`${getSafetyScoreColor(safetyScore)}.main`}>
+                <Typography
+                  variant="h3"
+                  color={`${getSafetyScoreColor(safetyScore)}.main`}
+                >
                   {safetyScore}
                 </Typography>
                 <Typography variant="h5" color="text.secondary" sx={{ ml: 1 }}>
@@ -115,7 +118,11 @@ export const Dashboard = () => {
                     color="primary"
                   />
                 }
-                label={trackingEnabled ? t('dashboard.trackingEnabled') : t('dashboard.trackingDisabled')}
+                label={
+                  trackingEnabled
+                    ? t('dashboard.trackingEnabled')
+                    : t('dashboard.trackingDisabled')
+                }
               />
               {!trackingEnabled && (
                 <Alert severity="info" sx={{ mt: 2 }}>
@@ -126,18 +133,20 @@ export const Dashboard = () => {
           </Card>
         </Grid>
 
-        {/* Map */}
+        {/* Tourist Map */}
         <Grid item xs={12} md={8}>
-          <Card sx={{ height: 400 }}>
-            <CardContent sx={{ height: '100%', '& > div': { height: 'calc(100% - 16px)' } }}>
-              <TouristMap />
+          <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+            <CardContent sx={{ flex: 1, p: 0, display: 'flex', flexDirection: 'column' }}>
+              <Box sx={{ flex: 1, height: '100%', width: '100%' }}>
+                <TouristMap />
+              </Box>
             </CardContent>
           </Card>
         </Grid>
 
         {/* Panic Button */}
         <Grid item xs={12} md={4}>
-          <Box sx={{ height: 400, display: 'flex', flexDirection: 'column' }}>
+          <Box sx={{ height: 450, display: 'flex', flexDirection: 'column' }}>
             <Card sx={{ flex: 1, display: 'flex', alignItems: 'center' }}>
               <CardContent sx={{ width: '100%' }}>
                 <PanicButton />

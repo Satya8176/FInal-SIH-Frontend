@@ -1,3 +1,4 @@
+// Sidebar.jsx
 import React from 'react';
 import {
   Drawer,
@@ -18,7 +19,7 @@ import {
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-const drawerWidth = 240;
+export const drawerWidth = 240;
 
 export const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
   const navigate = useNavigate();
@@ -72,7 +73,7 @@ export const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
       >
         {drawer}
       </Drawer>
-      
+
       {/* Desktop drawer */}
       <Drawer
         variant="permanent"
