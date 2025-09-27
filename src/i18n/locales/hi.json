@@ -1,0 +1,81 @@
+{
+  "common": {
+    "login": "लॉगिन",
+    "register": "पंजीकरण",
+    "logout": "लॉगआउट",
+    "save": "सेव करें",
+    "cancel": "रद्द करें",
+    "submit": "जमा करें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "warning": "चेतावनी",
+    "info": "जानकारी"
+  },
+  "auth": {
+    "welcome": "पर्यटक सुरक्षा ऐप में आपका स्वागत है",
+    "loginTitle": "अपने खाते में लॉगिन करें",
+    "registerTitle": "नया खाता बनाएं",
+    "email": "ईमेल पता",
+    "password": "पासवर्ड",
+    "confirmPassword": "पासवर्ड की पुष्टि करें",
+    "name": "पूरा नाम",
+    "phone": "फोन नंबर",
+    "emergencyContact": "आपातकालीन संपर्क",
+    "kycDocument": "केवाईसी दस्तावेज",
+    "itinerary": "यात्रा कार्यक्रम",
+    "loginButton": "साइन इन करें",
+    "registerButton": "खाता बनाएं",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "noAccount": "खाता नहीं है?",
+    "hasAccount": "पहले से खाता है?"
+  },
+  "dashboard": {
+    "title": "पर्यटक डैशबोर्ड",
+    "safetyScore": "सुरक्षा स्कोर",
+    "currentLocation": "वर्तमान स्थान",
+    "panicButton": "पैनिक बटन",
+    "panicConfirm": "क्या आप वाकई पैनिक अलर्ट ट्रिगर करना चाहते हैं?",
+    "trackingEnabled": "स्थान ट्रैकिंग सक्षम",
+    "trackingDisabled": "स्थान ट्रैकिंग अक्षम"
+  },
+  "profile": {
+    "title": "प्रोफाइल",
+    "digitalId": "डिजिटल पर्यटक आईडी",
+    "kycStatus": "केवाईसी स्थिति",
+    "tripExpiry": "यात्रा समाप्ति",
+    "emergencyContact": "आपातकालीन संपर्क",
+    "verified": "सत्यापित",
+    "pending": "प्रतीक्षित",
+    "rejected": "अस्वीकृत"
+  },
+  "alerts": {
+    "title": "सुरक्षा अलर्ट",
+    "noAlerts": "कोई अलर्ट उपलब्ध नहीं",
+    "unreadAlerts": "अपढ़े अलर्ट",
+    "allAlerts": "सभी अलर्ट",
+    "resolved": "हल किया गया",
+    "unresolved": "अनसुलझा",
+    "panic": "पैनिक अलर्ट",
+    "routeDeviation": "मार्ग विचलन",
+    "inactive": "निष्क्रियता अलर्ट",
+    "suddenStop": "अचानक रुकना",
+    "geofenceBreach": "जियोफेंस उल्लंघन"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "language": "भाषा",
+    "notifications": "सूचनाएं",
+    "tracking": "स्थान ट्रैकिंग",
+    "enableTracking": "रीयल-टाइम ट्रैकिंग सक्षम करें",
+    "pushNotifications": "पुश सूचनाएं",
+    "emailAlerts": "ईमेल अलर्ट",
+    "smsAlerts": "एसएमएस अलर्ट"
+  },
+  "map": {
+    "safeZone": "सुरक्षित क्षेत्र",
+    "warningZone": "चेतावनी क्षेत्र",
+    "dangerZone": "खतरा क्षेत्र",
+    "yourLocation": "आपका स्थान"
+  }
+}
