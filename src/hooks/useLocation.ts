@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from '../context/LocationContext';
 import { locationAPI } from '../api/location';
+import toast from 'react-hot-toast';
 
 export const useLocationOperations = () => {
   const {
@@ -44,6 +45,7 @@ export const useLocationOperations = () => {
 
   const triggerPanicAlert = async () => {
     if (!currentLocation) {
+      toast.error("Location is not available")
       throw new Error('Current location not available');
     }
 
@@ -60,6 +62,7 @@ export const useLocationOperations = () => {
         resolved: false,
       };
 
+      // toast.success("Please leave the place there is emergency around you");
       addAlert(panicAlert);
       
       return response.alertId;

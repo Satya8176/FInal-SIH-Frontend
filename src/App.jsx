@@ -13,6 +13,8 @@ import NotificationHandler from './components/Alerts/NotificationHandler';
 
 import './i18n';
 import 'leaflet/dist/leaflet.css';
+import { onMessageListener } from './firebase';
+import toast from 'react-hot-toast';
 const theme = createTheme({
   palette: {
     primary: {
@@ -81,6 +83,27 @@ const AppContent = () => {
 };
 
 const App = () => {
+
+  useEffect(() => {
+    // Subscribe to FCM messages globally
+    const unsubscribe = onMessageListener((payload) => {
+      console.log("Message received globally:", payload);
+      toast.success(payload.notification.title)
+      toast.error(payload.notification.body)
+
+      const title = payload.notification?.title || "New Alert";
+      const body = payload.notification?.body || "";
+
+      toast.info(`${title}: ${body}`, {
+        duration: 5000,
+        position: "top-right",
+      });
+    });
+
+    // Cleanup on unmount
+    return () => unsubscribe();
+  }, []);
+
 
   return (
     

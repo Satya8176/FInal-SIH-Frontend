@@ -9,17 +9,22 @@ import { useEffect,useState } from 'react';
 import { requestForToken, onMessageListener } from "../firebase";
 // 
 function Landing() {
-  const token=localStorage.getItem("token");
+  // const token=localStorage.getItem("token");
   // console.log("Token in landing page",token);
-  const [tokenFound, setTokenFound] = useState(token);
-  if(!tokenFound) {
-    const token =  requestForToken(); // Get FCM Token when app starts
-    console.log("Token in landing page after request",token);
-      onMessageListener().then((payload) => {
-        console.log("Message received:", payload);
-        alert(`${payload.notification.title}: ${payload.notification.body}`);
-      });
-    }
+
+  const [tokenFound, setTokenFound] = useState(null);
+  // if(!tokenFound) {
+  //   const token =  requestForToken(); // Get FCM Token when app starts
+  //   console.log("Token in landing page after request",token);
+  //     onMessageListener().then((payload) => {
+  //       console.log("Message received:", payload);
+  //       alert(`${payload.notification.title}: ${payload.notification.body}`);
+  //     });
+  //   }
+    useEffect(() => {
+  requestForToken(); // Save token when landing page loads
+  console.log("Landing page token")
+}, []);
   return (
     <div className="min-h-screen bg-white">
       <Header />

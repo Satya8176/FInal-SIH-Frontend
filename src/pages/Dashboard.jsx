@@ -149,7 +149,8 @@ export const Dashboard = () => {
           <Box sx={{ height: 450, display: 'flex', flexDirection: 'column' }}>
             <Card sx={{ flex: 1, display: 'flex', alignItems: 'center' }}>
               <CardContent sx={{ width: '100%' }}>
-                <PanicButton />
+                <PanicButton 
+                />
                 <Alert severity="warning" sx={{ mt: 2 }}>
                   Use only in genuine emergencies. This will alert authorities immediately.
                 </Alert>

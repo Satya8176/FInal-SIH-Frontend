@@ -11,6 +11,7 @@ import {
 import { Warning as Emergency, Phone } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { useLocationOperations } from '../../hooks/useLocation';
+import axios from 'axios';
 
 export const PanicButton = () => {
   const { t } = useTranslation();
@@ -29,6 +30,8 @@ export const PanicButton = () => {
   const handleConfirm = async () => {
     try {
       setLoading(true);
+      //here we need to call backend function 
+      await axios.get("http://localhost:3000/api/v2/send-alert")
       await triggerPanicAlert();
       setOpen(false);
       // In a real app, this would trigger immediate emergency response
