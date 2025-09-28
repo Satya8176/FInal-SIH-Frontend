@@ -8,36 +8,19 @@ import Footer from '../components/Landing/Footer';
 import { requestForToken, onMessageListener } from '../firebase';
 
 function Landing() {
-  const [token, setToken] = useState(null);
-
-  useEffect(() => {
-    // Get FCM token on page load
-    const fetchToken = async () => {
-      const retrievedToken = await requestForToken();
-      if (retrievedToken) {
-        setToken(retrievedToken);
-        alert(`FCM Token: ${retrievedToken}`);
-      } else {
-        alert("No FCM token found.");
-      }
-    };
-
-    fetchToken();
-
-    // Set up foreground message listener
-    const unsubscribe = onMessageListener((payload) => {
-      console.log("Message received:", payload);
-      alert(`${payload?.notification?.title}: ${payload?.notification?.body}`);
-    });
-
-    // Cleanup
-    return () => {
-      if (typeof unsubscribe === "function") {
-        unsubscribe(); // stop listening
-      }
-    };
-  }, []);
-
+  const [tokenFound, setTokenFound] = useState(null);
+  // if(!tokenFound) {
+  //   const token =  requestForToken(); // Get FCM Token when app starts
+  //   console.log("Token in landing page after request",token);
+  //     onMessageListener().then((payload) => {
+  //       console.log("Message received:", payload);
+  //       alert(`${payload.notification.title}: ${payload.notification.body}`);
+  //     });
+  //   }
+    useEffect(() => {
+  requestForToken(); // Save token when landing page loads
+  console.log("Landing page token")
+}, []);
   return (
     <div className="min-h-screen bg-white">
       <Header />
