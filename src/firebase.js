@@ -26,8 +26,9 @@ export const requestForToken = async () => {
 
     if (token) {
       // Send token to backend
-      await axios.post("http://localhost:3000/api/v2/save-token", { token });
+      await axios.post("https://sih-final-backend.vercel.app/api/v2/save-token", { token });
       console.log("Token saved to database:", token);
+      
       return token;
     } else {
       console.warn("No registration token available.");

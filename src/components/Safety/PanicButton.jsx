@@ -31,7 +31,7 @@ export const PanicButton = () => {
     try {
       setLoading(true);
       //here we need to call backend function 
-      await axios.get("http://localhost:3000/api/v2/send-alert")
+      await axios.get("https://sih-final-backend.vercel.app/api/v2/send-alert")
       await triggerPanicAlert();
       setOpen(false);
       // In a real app, this would trigger immediate emergency response
