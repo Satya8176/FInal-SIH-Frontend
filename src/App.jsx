@@ -9,10 +9,10 @@ import { CustomAppBar } from './components/Layout/AppBar';
 import { Sidebar } from './components/Layout/Sidebar';
 import AppRoutes  from './routes';
 import Landing from './pages/Landing';
+import NotificationHandler from './components/Alerts/NotificationHandler';
+
 import './i18n';
 import 'leaflet/dist/leaflet.css';
-import { requestForToken, onMessageListener } from "./firebase";
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -45,6 +45,10 @@ const queryClient = new QueryClient({
 });
 
 const AppContent = () => {
+
+
+
+
   const { isAuthenticated } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -77,17 +81,11 @@ const AppContent = () => {
 };
 
 const App = () => {
-  useEffect(() => {
-    requestForToken(); // Get FCM Token when app starts
-
-    onMessageListener().then((payload) => {
-      console.log("Message received:", payload);
-      alert(`${payload.notification.title}: ${payload.notification.body}`);
-    });
-  }, []);
 
   return (
+    
     <QueryClientProvider client={queryClient}>
+      <NotificationHandler />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>

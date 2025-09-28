@@ -1,3 +1,4 @@
+import axios from "axios";
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
@@ -22,8 +23,9 @@ export const requestForToken = async () => {
   try {
     const token = await getToken(messaging, { vapidKey: "BKs7igMKMwockn1jj3bm7E5AQNc0kVMv21k6AIZXwzTJoTssJtBJA6h5RX2fiUgDyzQaxwzfD1yKJxe_aDwPJcI" });
     if (token) {
-      console.log("FCM Token:", token);
-      console.log("Token is genrated ",token)
+      localStorage.setItem("token", token);
+      await axios.post("http://localhost:3000/api/v2/save-token", { token });
+      console.log("Token saved ");
       return token;
     } else {
       console.warn("No registration token available.");
